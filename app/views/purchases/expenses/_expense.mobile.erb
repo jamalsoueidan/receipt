@@ -1,0 +1,1 @@
+<li><a href="#"><h6><%=expense.title%></h6><p><%=expense.description%></p></a><span class="ui-li-count"><%=expense.price%> kr,-</span><%=link_to "", purchase_expense_path(@purchase, expense), :method => :delete, :confirm => true%></li>

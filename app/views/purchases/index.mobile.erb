@@ -1,0 +1,16 @@
+<div data-role="header">
+  <h1>Købt</h1>
+  <%= link_to "Ny køb", new_purchase_path, :"data-icon" => "plus", :class => "ui-btn-right" %>
+</div>
+
+<div data-role="content">
+  <% if @purchases.empty? %>
+  <h4>Ingen varer til salg</h4>
+  <% else %>
+  <ul data-role="listview">
+    <%= render @purchases %>
+  </ul>
+  <% end %>
+</div>
+
+<%= render 'footer' %>

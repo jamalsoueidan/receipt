@@ -1,0 +1,20 @@
+<div data-role="header">
+  <h1><%= @purchase.title %></h1>
+  <%= back %>
+  <%= link_to "Sælge", sell_purchase_path(@purchase), :confirm => true, :class => "ui-btn-right", :method => :post %>
+</div>
+
+<div data-role="content">
+  <%=@purchase.description%><br />
+  <%= @purchase.price %> Kr,-<br />
+
+  <h4>Udgifter</h4>
+  <ul data-role="listview" data-split-icon="delete">
+    <%= render :partial => '/purchases/expenses/expense', :collection => @purchase.expenses %>
+  </ul>
+
+  <br />
+  <%= button_to "Tilføj udgifter", new_purchase_expense_path(@purchase), :method => :get %>
+</div>
+
+<%= render 'footer' %>

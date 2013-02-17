@@ -1,0 +1,20 @@
+<div data-role="header">
+  <h1><%= @purchase.title %></h1>
+  <%= back(sales_path) %>
+</div>
+
+<div data-role="content">
+  <%=@purchase.description%><br />
+  <%= @purchase.price %> Kr,-
+
+  <% if @purchase.expenses.empty? %>
+  <h4>Ingen udgifter</h4>
+  <% else %>
+  <h4>Udgifter</h4>
+  <ul data-role="listview" data-split-icon="delete">
+    <%= render :partial => '/purchases/expenses/expense', :collection => @purchase.expenses %>
+  </ul>
+  <% end %>
+</div>
+
+<%= render 'footer' %>

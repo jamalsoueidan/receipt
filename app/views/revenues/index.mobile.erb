@@ -1,0 +1,17 @@
+<div data-role="header">
+  <h1>Omsætning</h1>
+</div>
+
+<div data-role="content">
+  <ul data-role="listview">
+    <li><a href="<%=list_revenues_path%>"><h3>Omsætning</h3><p>blah..</p></a><span class="ui-li-count">+ <%=@revenue%> kr,-</span></li>
+    <li><h3>Sold</h3><p>blah..</p><span class="ui-li-count">+ <%=@sold%> kr,-</span></li>
+    <li><h3>Udgifter</h3><p>blah..</p><span class="ui-li-count">- <%=@expense%> kr,-</span></li>
+    <li><h3>Bought</h3><p>blah..</p><span class="ui-li-count">- <%=@bought%> kr,-</span></li>
+
+
+    <li data-role="list-divider">Total<span class="ui-li-count"><%=@total%> kr,-</span></li>
+  </ul>
+</div>
+
+<%= render 'footer' %>

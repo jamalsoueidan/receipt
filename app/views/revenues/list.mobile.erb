@@ -1,0 +1,17 @@
+<div data-role="header">
+  <h1>Omsætning list</h1>
+  <%= back(revenues_path) %>
+  <%= link_to "Tilføj omsætning", new_revenue_path, :"data-icon" => "plus", :class => "ui-btn-right" %>
+</div>
+
+<div data-role="content">
+  <% if @revenues.empty? %>
+  <h4>Ingen omsætning</h4>
+  <% else %>
+  <ul data-role="listview" data-split-icon="delete">
+    <%= render :partial => 'revenue', :collection => @revenues %>
+  </ul>
+  <% end %>
+</div>
+
+<%= render 'footer' %>
